@@ -1,15 +1,27 @@
 {
-  "name": "label-printer-server",
+  "name": "worker-hono-drizzle-starter",
   "scripts": {
     "dev": "wrangler dev",
+    "tail": "wrangler tail",
     "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "types": "wrangler types --env-interface CloudflareBindings --experimental-include-runtime ./worker-runtime.d.ts",
+    "migration:generate": "drizzle-kit generate",
+    "migration:apply:local": "wrangler d1 migrations apply label-printer-server --local",
+    "migration:apply:remote": "wrangler d1 migrations apply label-printer-server --remote",
+    "migration:dev": "bun run migration:generate && bun run migration:apply:local"
   },
   "dependencies": {
-    "hono": "^4.6.16"
+    "@hono/valibot-validator": "^0.5.2",
+    "@hono/zod-validator": "^0.4.2",
+    "drizzle-orm": "^0.39.0",
+    "hono": "^4.6.19",
+    "uuid": "^11.0.5",
+    "valibot": "^1.0.0-beta.14"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250109.0",
-    "wrangler": "^3.101.0"
+    "drizzle-kit": "^0.30.3",
+    "typescript": "^5.7.3",
+    "wrangler": "^3.106.0",
+    "@types/node": "22.12.0"
   }
 }
