@@ -1,7 +1,7 @@
 {
   "name": "worker-hono-drizzle-starter",
   "main": "src/index.ts",
-  "compatibility_date": "2025-01-13",
+  "compatibility_date": "2025-02-19",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true
@@ -13,7 +13,7 @@
     {
       "binding": "DATABASE",
       "database_name": "worker-hono-drizzle-starter",
-      "database_id": "f2ec67af-a997-4062-8b22-8f4604db332b",
+      "database_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "migrations_dir": "migrations"
     }
   ]
