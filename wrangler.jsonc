@@ -1,7 +1,9 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "worker-hono-drizzle-starter",
   "main": "src/index.ts",
-  "compatibility_date": "2025-02-19",
+  "minify": true,
+  "compatibility_date": "2025-02-26",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true
